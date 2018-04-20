@@ -8,11 +8,16 @@
  */
 public class DaysOfMonth {
     public static void main(String[] args){
-        int year = Integer.parseInt(args[0]);
-        int month = Integer.parseInt(args[1]);
-        // Buggy output
-        System.out.printf("Month of %d/%d has %d days\n",
-        		month, year, daysofmonth(month, year));
+	if (args.length < 2) {
+	    System.out.printf("Error: Please enter the year and the month correctly as below.\n$ java DaysOfMonth YYYY MM\n");
+	}
+	else {
+	    int year = Integer.parseInt(args[0]);
+	    int month = Integer.parseInt(args[1]);
+	    // Buggy output
+	    System.out.printf("Month of %d/%d has %d days\n",
+			      month, year, daysofmonth(month, year));
+	}
     }
     static int daysofmonth(int month, int year) {
 	if (month == 4 || month == 6 || month == 9 || month == 11) {
