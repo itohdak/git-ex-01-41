@@ -10,13 +10,16 @@ public class DaysOfMonth {
     public static void main(String[] args){
 	if (args.length < 2) {
 	    System.out.printf("Error: Please enter the year and the month correctly as below.\n$ java DaysOfMonth YYYY MM\n");
-	}
-	else {
+	} else {
 	    int year = Integer.parseInt(args[0]);
 	    int month = Integer.parseInt(args[1]);
-	    // Buggy output
-	    System.out.printf("Month of %d/%d has %d days\n",
-			      month, year, daysofmonth(month, year));
+	    if (month < 1 || month > 12) {
+		System.out.printf("Error: Please enter a valid number for the month; 1-12.\n$");
+	    } else {
+		// Buggy output
+		System.out.printf("Month of %d/%d has %d days\n",
+				  month, year, daysofmonth(month, year));
+	    }
 	}
     }
     static int daysofmonth(int month, int year) {
